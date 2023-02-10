@@ -4,9 +4,9 @@ import { styles, useCustomTheme } from "@coral-xyz/themes";
 import SearchIcon from "@mui/icons-material/Search";
 import InputAdornment from "@mui/material/InputAdornment";
 
-export const useStyles = styles((theme) => ({
+const useStyles = styles((theme) => ({
   searchField: {
-    marginTop: "10px",
+    marginTop: "0px",
     marginBottom: "16px",
     width: "inherit",
     display: "flex",

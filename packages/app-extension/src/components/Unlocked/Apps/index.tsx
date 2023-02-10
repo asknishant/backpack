@@ -213,7 +213,7 @@ function _WalletXnftGrid({
       {showContent && (
         <div
           style={{
-            paddingTop: "8px",
+            paddingTop: "0px",
             paddingBottom: "18px",
             paddingLeft: "10px",
             paddingRight: "10px",
@@ -231,21 +231,21 @@ function _WalletXnftGrid({
                       key={idx}
                       xs={isXs ? 3 : 2}
                       style={{
-                        marginTop: idx >= iconsPerRow ? "24px" : 0,
+                        marginTop: "24px",
                       }}
                     >
                       <SkeletonAppIcon />
                     </Grid>
                   );
                 })
-              : plugins.map((p: any, idx: number) => {
+              : plugins.map((p: any) => {
                   return (
                     <Grid
                       item
                       key={p.url}
                       xs={isXs ? 3 : 2}
                       style={{
-                        marginTop: idx >= iconsPerRow ? "24px" : 0,
+                        marginTop: "24px",
                       }}
                     >
                       <PluginIcon plugin={p} onClick={() => onClickPlugin(p)} />

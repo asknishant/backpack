@@ -155,24 +155,7 @@ const HeaderRow = function HeaderRow({
   isCollapsed: boolean;
   collapseSingleCollection: collapseSingleCollection;
 }) {
-  const c = blockchainCollections[blockchainIndex];
-  const wallets = useAllWallets();
-  const wallet = wallets.find((wallet) => wallet.publicKey === c.publicKey);
-  const blockchain = wallet?.blockchain;
-  return (
-    <>
-      <CustomCard top={true} bottom={isCollapsed}>
-        <_BalancesTableHead
-          blockchain={blockchain as Blockchain}
-          wallet={wallet!}
-          showContent={!isCollapsed}
-          setShowContent={(isCollapsed) => {
-            collapseSingleCollection(listIndex, blockchainIndex, !isCollapsed);
-          }}
-        />
-      </CustomCard>
-    </>
-  );
+  return <CustomCard top={true} bottom={false} />;
 };
 
 const FooterRow = function () {
@@ -305,6 +288,7 @@ const CustomCard = styled("div")(
             borderTopLeftRadius: "12px",
             borderTopRightRadius: "12px",
             borderTop: theme.custom.colors.borderFull,
+            minHeight: "12px",
           }
         : {}),
       ...(bottom
@@ -461,7 +445,8 @@ const getItemForIndex = (
 
   if (wrappedCollectionGroupIndex === 0) {
     return {
-      height: isCollapsed ? 52 : 36,
+      //height: isCollapsed ? 52 : 36,
+      height: 12,
       key: `header${blockchainIndex}`,
       component: (
         <HeaderRow
@@ -474,6 +459,7 @@ const getItemForIndex = (
       ),
     };
   }
+
   if (collectionGroupIndex >= numberOfRowsInCollection) {
     return {
       height: 24,

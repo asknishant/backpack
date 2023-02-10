@@ -409,7 +409,9 @@ function useNavBar() {
 
   if (isRoot) {
     navButtonRight = isXs ? <SettingsButton /> : undefined;
-    navButtonLeft = (
+    navButtonLeft = isXs ? (
+      ""
+    ) : (
       <div style={{ display: "flex" }}>
         <Typography
           style={{

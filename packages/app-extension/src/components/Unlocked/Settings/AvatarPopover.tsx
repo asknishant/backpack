@@ -5,7 +5,7 @@ import {
   UI_RPC_METHOD_ACTIVE_USER_UPDATE,
   UI_RPC_METHOD_KEYRING_STORE_LOCK,
 } from "@coral-xyz/common";
-import { ProxyImage , useBreakpoints } from "@coral-xyz/react-common";
+import { ProxyImage, useBreakpoints } from "@coral-xyz/react-common";
 import {
   useAllUsers,
   useAvatarUrl,
@@ -79,7 +79,7 @@ export function AvatarPopoverButton({
       <Popover
         open={Boolean(anchorEl)}
         anchorEl={anchorEl}
-        onClose={() => setAnchorEl(false)}
+        onClose={() => setAnchorEl(null)}
         anchorOrigin={{
           vertical: isXs ? "bottom" : "top",
           horizontal: "left",
